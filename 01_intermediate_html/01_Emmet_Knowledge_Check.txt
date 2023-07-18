@@ -1,0 +1,11 @@
+
+Knowledge Check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    Why should you use Emmet?
+    What are some useful Emmet abbreviations?
+    What syntax would you use to create this element <p class="text"></p>?
+    What syntax expands to an element with a child element inside of it? For example: <div><p></p></div>
+    What syntax would you use to create three elements that have the same class name?
+
