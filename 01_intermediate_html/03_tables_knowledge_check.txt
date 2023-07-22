@@ -1,0 +1,30 @@
+
+Knowledge check
+
+This section contains questions for you to check your understanding of this lesson on your own. If you’re having trouble answering a question, click it and review the material it links to.
+
+    What is a table?
+
+        A table is a structured set of data made up of rows and columns (tabular data).
+
+        It allows you to quickly and easily look up values that indicated some kind of
+        connection between different types of data, foe example a person and their age,
+        or a day of the week, or the timetables for a local swimming pool.
+
+    Why is it a bad idea to use HTML Tables for page layout?
+
+        Because apart from looking absolutely awful, it makes it extremely hard
+        for screen readers to navigate the page making it less accessible.
+
+        It also makes your website incredibly hard to maintain.
+
+    What are caption elements useful for?
+
+        To caption tables to breifly explain what the data in the table is bout.
+
+    What is the scope attribute?
+
+        The scope attribute is added to the <th> element to tell screen readers
+        what cells the header is a header for.
+
+        <th scope="col">Data</th>
