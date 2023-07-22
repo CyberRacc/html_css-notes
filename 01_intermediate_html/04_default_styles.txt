@@ -1,0 +1,26 @@
+
+
+Browsers by default inject some style.
+
+h1 elements are bigger and bolder than regular text
+
+links are blue and underlined.
+
+list (ul and ol) both have a bunch of padding around them.
+
+All browsers have a default built-in stylesheet
+
+Using a CSS Reset, which is a file that undoes browser defaults makes elements
+behave the same in all browsers.
+
+You don't have to use one though, but it's an option.
+
+The most popular CSS resets are:
+
+    The Meyer Reset
+
+    Normalize.css
+
+This is a really good website for checking element default styles:
+    
+    https://browserdefaultstyles.com/

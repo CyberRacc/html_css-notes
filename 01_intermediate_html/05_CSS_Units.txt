@@ -1,0 +1,67 @@
+
+
+There are many diffrent units used to define sizes in CSS.
+
+The difference between Absolute units and Relative units.
+
+## Absolute Units ##
+
+    Absolute units are those that are always the same in any context.
+
+    px (pixels) is an absolute unit because the size of any pizel does't change
+    relative to anything else on the page.
+
+    px is the ONLY absolute unit you should be using for web projects.
+
+    The rest are for printing because they are related to physical units
+    like in (inch) and cm (centimetre)
+
+## Relative Units ##
+
+    Relative units can change based on their context.
+
+# em and rem #
+
+    em and rem both refer to a font size but they are often use to define
+    other sizes in CSS.
+
+    A general rule of thumb is to prefer rem.
+
+    1em is the font-size of an element (or the lement's parent if you are using it
+    to set font size)
+
+    For example, if an element's font-size is 16px, then setting its width to 4em
+    would make its width 64px (16 * 4 == 64).
+
+    1rem is the font size of the root element (either:root or html). The math
+    works the same with rem as with em but without the added complexity of
+    keeping track of the parent's font size. Relying on em could mean that
+    a particular size could change if the context changes, which is likely not
+    what you want.
+
+# Viewport units #
+
+    The units vh and vw relate to the size of the viewport.
+
+    Specifically, 1vh is equal to 1% of the viewport height and 1vw is equal to 
+    1% of the viewport width.
+
+    This is great for things like full-screen app-like interfaces.
+
+For more info on units and the units that are available, look here:
+
+https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+
+
+## Conclusion ##
+
+Really when it comes to absolute units, just use rem for font-size and px for everything else.
+Em is more confusing than it's worth and can lead to confusing size-related bugs.
+
+Using a relative size like rem to define font sizes accross your site is recommended.
+Users  will want to change the font size to increase readability, and most browsers
+allow this.
+
+Here's some fun things and best pratices regarding vh and vw:
+
+    https://css-tricks.com/fun-viewport-units/
