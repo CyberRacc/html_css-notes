@@ -1,0 +1,47 @@
+
+If you use the font-family property to change to a font like impact or New Times Roman,
+and those fonts are not installed on the user's device, then a fallback font will be displayed.
+
+If you have not defined a fallback, then the default HTML font will be used, which is ugly.
+
+For this reason it's common to see long stacks of fonts like the below:
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+The point of this long string of font-families is to try to use the defualt font
+of the system's user interface. It will go through each of those fonts until it finds
+one that is installed on the system, and use that.
+
+Using a stack like this often produces pleasing results, especially if you're going for
+a "neutral" font style.
+
+
+You can also import and use fonts from external places like Google Fonts, Font Library,
+or the premium, but non-free Adobe Fonts, these don't have to be installed on the user's device.
+
+You can use a <link> tag in HTML to import it.
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+Or an @import tag at the top of a CSS file.
+
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+Either method will make the font available for use in CSS:
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+It's still good to have a fall-back font in case the url changes or the server goes down, breaking things.
+
+You can also use downloaded fonts.
+
+You can import and define a custom font using the @font-face rule and use it same as 
+any other font-family.
+
+
