@@ -34,15 +34,33 @@ caption {
   padding: 10px;
 }
 
-.name-col {
+/* Header row */
+th.name {
+  border-top: 4px solid black;
   border-left: 4px solid black;
   border-right: 4px solid black;
 }
 
-.name-col:first-child {
-  border-top: 4px solid black;
+/* First row */
+tbody tr:nth-child(1) td.name {
+  border-top: 1px solid rgb(190,190,190);
+  border-bottom: 1px solid rgb(190,190,190);
+  border-left: 4px solid black;
+  border-right: 4px solid black;
 }
 
-.name-col:last-child {
+/* Middle rows */
+tbody tr:nth-child(n+2):nth-last-child(n+2) td.name {
+  border-top: 1px solid rgb(190,190,190);
+  border-bottom: 1px solid rgb(190,190,190);
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+}
+
+/* Last row */
+tbody tr:last-child td.name {
+  border-top: 1px solid rgb(190,190,190);
   border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
 }

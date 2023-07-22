@@ -7,15 +7,16 @@
     <link href="minimal-table.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Table template</h1>
     
+    <h1>Table template</h1>
+
     <div>
         <table>
             <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
             <thead>
                 <tr>
                     <th scope="col" colspan="2"></th>
-                    <th id="name">Name</th>
+                    <th id="name" class="name">Name</th>
                     <th id="mass">Mass (10<sup>24</sup>kg)</th>
                     <th id="diameter">Diameter (km)</th>
                     <th id="density">Density (kg/m<sup>3</sup>)</th>
@@ -30,7 +31,7 @@
             <tbody>
               <tr>
                 <th scope="row" rowspan="4" colspan="2" id="terrestrial-planets">Terrestrial planets</th>
-                <td headers="name terrestrial-planets" class="name-col">Mercury</td>
+                <td headers="name terrestrial-planets" class="name">Mercury</td>
                 <td>0.330</td>
                 <td>4,879</td>
                 <td>5427</td>
@@ -42,7 +43,7 @@
                 <td>Closest to the Sun</td>
               </tr>
               <tr>
-                <td headers="name terrestrial-planets" class="name-col">Venus</td>
+                <td headers="name terrestrial-planets" class="name">Venus</td>
                 <td>4.87</td>
                 <td>12,104</td>
                 <td>5243</td>
@@ -54,7 +55,7 @@
                 <td></td>
               </tr>
               <tr>
-                <td headers="name terrestrial-planets" class="name-col">Earth</td>
+                <td headers="name terrestrial-planets" class="name">Earth</td>
                 <td>5.97</td>
                 <td>12,756</td>
                 <td>5514</td>
@@ -66,7 +67,7 @@
                 <td>Our world</td>
               </tr>
               <tr>
-                <td headers="name terrestrial-planets" id="name">Mars</td>
+                <td headers="name terrestrial-planets" class="name">Mars</td>
                 <td>0.642</td>
                 <td>6,792</td>
                 <td>3933</td>
@@ -80,7 +81,7 @@
               <tr>
                 <th scope="row" rowspan="4" id="jovian-planets">Jovian planets</th>
                 <th scope="row" rowspan="2" id="gas-giants">Gas giants</th>
-                <td>Jupiter</td>
+                <td headers="name gas-giants" class="name">Jupiter</td>
                 <td>1898</td>
                 <td>142,984</td>
                 <td>1326</td>
@@ -92,7 +93,7 @@
                 <td>The largest planet</td>
               </tr>
               <tr>
-                <td>Saturn</td>
+                <td headers="name gas-giants" class="name">Saturn</td>
                 <td>568</td>
                 <td>120,536</td>
                 <td>687</td>
@@ -105,7 +106,7 @@
               </tr>
               <tr>
                 <th scope="row" rowspan="2" id="ice-giants">Ice giants</th>
-                <td>Uranus</td>
+                <td headers="name ice-giants" class="name">Uranus</td>
                 <td>86.8</td>
                 <td>51,118</td>
                 <td>1271</td>
@@ -117,7 +118,7 @@
                 <td></td>
               </tr>
               <tr>
-                <td>Neptune</td>
+                <td headers="name ice-giants" class="name">Neptune</td>
                 <td>102</td>
                 <td>49,528</td>
                 <td>1638</td>
@@ -129,8 +130,8 @@
                 <td></td>
               </tr>
               <tr>
-                <th scope="row" colspan="2" id="ice-giants">Dwarf planets</th>
-                <td>Pluto</td>
+                <th scope="row" colspan="2" id="dwarf-planets">Dwarf planets</th>
+                <td headers="name dwarf-planets" class="name">Pluto</td>
                 <td>0.0146</td>
                 <td>2,370</td>
                 <td>2095</td>
