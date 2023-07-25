@@ -1,0 +1,50 @@
+
+Knowledge check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    What is the difference between the child combinator and the descendant combinator?
+
+        > - The child combinator selects only the children of an element.
+        So div > div would select only the children of div.
+
+        div > div > div - this would select only the grandchildren of div.
+
+        div div - descendant cominator (space) would select all children and grand-children of div,
+        even great-grand-children, no matter how deep the children are.
+
+
+
+    How does the syntax of pseudo-classes and pseudo-elements differ?
+
+        pseudo-classes use a single colon - :
+        pseudo-elements use two colons:   - ::
+
+    Do pseudo-classes exist somewhere in HTML? Do pseudo-elements?
+
+        No, they do not normally exist in the HTML markup.
+
+    Name two ways you could select every second child of an element, starting with the first.
+
+        :nth-child(2n+1)
+
+    What is the difference between div:first-child and div:last-child? What will each select?
+
+        div:first-child will select all divs that are the first child of any element.
+
+        div:last-child will select all divs that are the last child of any element.
+
+    What selector would you use to style a button a user is currently hovering over?
+    How about one that is currently being clicked on?
+
+        :hover
+
+        For one that is being clicked, you can use :active
+
+    How could you select all input elements with a type of text?
+
+        input[type="text"]
+
+    How could you select all classes that begin with thunder?
+
+        [class^="thunder"]
