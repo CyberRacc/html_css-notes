@@ -1,0 +1,32 @@
+
+Knowledge check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    Which property would you use to make an element transparent?
+
+        Opacity
+
+    Which property would you use to make a background image tile?
+
+        background-repeat: repeat;
+
+    Which property would you use to add scrollbars to an element?
+
+        overflow
+
+    Which property would you use to add a shadow behind an element?
+
+        box-shadow
+
+    Which property would you use to create rounded corners on an element?
+
+        border-radius
+
+    How would you use border-radius to make a circular element?
+
+        border-radius: 50%;
+
+        If you set the radius to 100%, the browser will try to scale the rounded corners down, which is
+        just unescessary and may cause a slight performance hit, nothing noticeable, but why do it?
+

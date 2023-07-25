@@ -64,4 +64,14 @@ available.
 
 ## Overflow ##
 
-    
+    Using overflow, you can define what happens to an element when its content is too big to fit.
+
+    The most common usage is to add scrollbars to an element.
+
+    For example, a card style element with scrollable content.
+
+## Opacity ##
+
+    Easy but very useful in some circumstances.
+
+    Use to make things transparent.
