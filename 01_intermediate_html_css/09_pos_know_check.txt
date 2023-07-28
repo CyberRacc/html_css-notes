@@ -1,0 +1,29 @@
+
+Knowledge check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    What is the difference between static and relative positioning?
+
+        Relative acts the same as static positioning except it allows
+        you to change the top, left, bottom and right positions, this
+        change is relative from the original position of the element.
+
+    What is absolute positioning useful for?
+
+        When you want to position something at an exact point on the screen without
+        disturbing other elements around it.
+
+        Using absolute positioning removes an element from the normal document
+        flow.
+
+        Using this allows you to place an element anywhere on the screen using top, right
+        , bottom and left properties.
+
+    What is the difference between fixed and sticky positioning?
+
+        Sticky positioning acts as a fixed element until scrolled past, then it sticks to the
+        screen and follows the user as they scroll down.
+
+        
+
