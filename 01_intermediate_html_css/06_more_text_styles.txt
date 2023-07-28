@@ -45,3 +45,107 @@ You can import and define a custom font using the @font-face rule and use it sam
 any other font-family.
 
 
+@font-face {
+  font-family: my-cool-font;
+  src: url(../fonts/the-font-file.woff);
+}
+
+h1 {
+  font-family: my-cool-font, sans-serif;
+}
+
+## Text Styles ##
+
+    font-style
+
+        Typically used to make the font italic.
+
+        Use font-style: italic; when you need to style a whole element.
+
+        Use <em> when you want to highlight the middle of a sentence
+        with italics and emphasis.
+
+        We should use font-style: italic; if italics is required for styling purposes.
+
+            h1 {
+                font-style: italic;
+            }
+
+
+        We should use the em element if italics is required for emphasis.
+
+        <p>I <em>never</em> said he stole your money</p>
+        <p>I never said <em>he</em> stole your money</p>
+        <p>I never said he stole <em>your</em> money</p>
+
+    letter-spacing
+
+        h1 {
+            font-family: 'COUTUREBold';
+            margin: 0;
+            font-size: 38px;
+        }
+
+        .wide {
+            font-size: 24px;
+            letter-spacing: .5em;
+        }
+
+        .narrow {
+            font-size: 48px;
+            letter-spacing: -.15em;
+        }
+
+        Letter spacing is useful when you need to adjust a custom
+        font that has too much or too little space.
+
+        It can also be aethetically pleasing in some cases to use
+        letter spacing for things like headers sometimes.
+
+    line-height
+
+        Line height adjusts the space between lines in wrapped text.
+
+        Adding line height can increase readability.
+
+            p.line-height {
+                line-height: 1.5;
+            }
+
+    text-transform
+
+        Simply changes the case of the given text.
+
+        You could use this to force your heading tags to be all
+        uppercase, or to capitalise every word.
+
+    text-shadow
+
+        Adds a shadow around the text in the selected element.
+
+        Best used sparingly.
+
+        Great for headings and other presentational text.
+
+    ellipsis
+
+        Not a single property.
+
+        With the text-overflow property, you can truncate overflowing
+        text with an ellipsis.
+
+        Making an overflow occur requires more properties
+        because the default behaviour of text is simply printing outside
+        its container isn't considered an overflow.
+
+        The full snippet is:
+
+            .overflowing {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+        Read this when needing this feature:
+
+        https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/

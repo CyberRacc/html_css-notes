@@ -16,8 +16,10 @@ This section contains questions for you to check your understanding of this less
 
     Which property would you use to increase or decrease the space between letters in a word?
 
-
+        letter-spacing
 
     Which property would you use to increase or decrease the space between lines in a paragraph?
+
+        line-height
 
         
