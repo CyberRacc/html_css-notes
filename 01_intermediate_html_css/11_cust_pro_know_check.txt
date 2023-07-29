@@ -1,0 +1,32 @@
+
+Knowledge check
+
+This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+
+    How would you declare a custom property with a name of text-color?
+
+        --text-color: red;
+
+    How would you access a custom property with a name of background-color?
+
+        background-color: var(--background-color);
+
+    Where would you declare a custom property to have its scope be global and accessible
+    by all other selectors?
+
+        In the :root selector.
+
+    Where would you declare a custom property so that a user’s theme setting from their
+    OS or browser was taken into account?
+
+        With the prefers-color-scheme media query:
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --border-btn: 1px solid rgb(220, 220, 220);
+                    --color-base-bg: rgb(18, 18, 18);
+                    --color-base-text: rgb(240, 240, 240);
+                    --color-btn-bg: rgb(36, 36, 36);
+                    --theme-name: "dark";
+                }
+            }
