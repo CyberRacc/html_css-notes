@@ -1,0 +1,64 @@
+
+Knowledge check
+
+    Explain what the form element is for and what two attributes it should always include.
+
+        The form element is a container for forms, like a div.
+
+        It takes two attributes, action and method.
+
+        Action is used to tell the form which URL to send the data to be processed.
+
+        Method is used to tell the brwoser which HTTP request method it should use
+        to submit the form. GET and POST methods are the two that are most used.
+
+    Explain what form controls are at a high level.
+
+        Form controls are simply a way to collect data from a user, most common one is <input>
+
+    What is the name attribute for?
+
+        It serves as a reference to the data inputted into a form control after submitting it.
+
+        It is for the backend, not the user.
+
+    What are the three most common form controls you can use for allowing users to
+    select predefined options?
+
+        <select> <option> </select>
+
+        The select dropdown.
+
+        Radio buttons:
+
+            <div>
+                <input type="radio" id="adult" name="ticket_type" value="adult">
+                <label for="adult">Adult</label>
+            </div>
+
+        Checkboxes:
+
+            <div>
+                <input type="checkbox" id="onions" name="topping" value="onions">
+                <label for="onions">Onions</label>
+            </div>
+
+    What are the three types of buttons in HTML?
+
+        <button type="button"></button> // Generic
+        <button type="submit"></button> // Submit form
+        <button type="reset"></button>  // Resets/clears form to default values. 
+
+    What are the two most challenging aspects of styling forms?
+
+        1. Browsers have default styles, and each browser has different ones.
+
+        So you need to override all of these default styles in all browsers to style
+        your forms consistently.
+
+        2. Some elements are difficult or impossible to style.
+
+        Checkboxes and radio buttons are difficult to style.
+
+        Calendar and date pickers are impossible to style and you should use a JavaScript
+        library if you need this.
