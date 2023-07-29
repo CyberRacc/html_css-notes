@@ -1,0 +1,25 @@
+
+Knowledge check
+
+    What are the four CSS math functions we covered above?
+
+        calc()
+        min()
+        max()
+        clamp()
+
+    How do we use CSS math functions in our CSS?
+
+        We use them for creating colour in gradients, rgb, hsl etc. And to create
+        more complex responsive websites with min() max() and clamp().
+
+    How can CSS functions help make websites and applications more responsive?
+
+        By resizing elements based on the space available, the font-size and zoom level
+        that the user has set. This can help create much more appealing and
+        responsive websites that still look nice even when the font-size or zoom level
+        has changed.
+
+        For example, clamp() can be used to set a minimum, maximum and ideal font-size
+        so as it changes, it cannot resize to extremes.
+
