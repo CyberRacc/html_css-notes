@@ -1,0 +1,47 @@
+
+### Broser Compatibility ###
+
+    It's important to keep the variety of browsers in mind that users may be using.
+
+    It's also important to make sure you consider the mobile versions of different
+    browsers.
+
+
+    You need to make sure that you're testing your web applications against the browsers
+    which are most likely to be used by the users. Chrome, Safari, Firefox and other
+    chromium-based browsers like Mircosoft-Edge, Brave, Vivaldi, Opera, etc.
+
+    It's worth testing with Internet Explorer too if you need someone that uses it to
+    access the website.
+
+    Applications may behave differently in different browsers.
+
+    W3C World Wide Web Consortium is the authority behind developing web standards
+    to maximize accessibility and consistency of the web experience. W3C is also the
+    authority to develop new features in the CSS. This is a closely collaborative
+    approach with the Web as a community as well as the companies developing the web browsers.
+
+
+## When is it safe to use new features? ##
+
+    As exciting as it is to implement new features, there is a risk of rushing.
+    It would not be a positive experience for your users to find that, for example,
+    your application used to work well in Firefox, but due to the changes in the codebase
+    it is now unusable in Firefox but works well in Safari. Thankfully, there is a
+    tool that can help you prevent this situation.
+
+    https://caniuse.com/
+
+## Mobile Browsers ##
+
+    On iPadOS and iOS, Safari is technically the only supported browser. You can install
+    Firefox or Chrome, but they are not full browsers as they are still using the Safari
+    rendering engine (WebKit).
+
+    You may need to adjust your applications to make them work correctly on mobile.
+
+    Browsers provide a way to emulator other devices, so you can test what the website
+    will look like and how it will behave on a mobile screen, but remember that
+    all you're emulating is the screen size. Any specific considerations of the
+    OS will not be reproduceable, which means it may still behave differently on the
+    actual device.

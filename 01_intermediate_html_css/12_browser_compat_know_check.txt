@@ -1,0 +1,16 @@
+
+Knowledge check
+
+    What is the most used browser currently?
+
+        Chrome / Chromium
+
+    What was the original name of the first web browser?
+
+        WorldWideWeb Browser, renamed to Nexus.
+
+    How are mobile browsers different on Apple mobile operating systems from Android?
+
+        Because they are not full browsers on iOS and iPadOS, as they still use the
+        Safari rendering engine (WebKit).
+
