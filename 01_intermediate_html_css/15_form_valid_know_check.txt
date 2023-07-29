@@ -1,0 +1,25 @@
+
+Knowledge check
+
+    What does the required validation do?
+
+        It means that the user has to fill that input field or the form will not submit.
+
+    What validations can you use for checking text length?
+
+        minlength and maxlength attributes.
+
+    How can you validate the minimum and maximum of numeric inputs?
+
+        min and max attributes.
+
+    What can you use the pattern validation for?
+
+        You can use a regular expression to make sure that the input matches a specific
+        patter, useful for zip codes, post codes, emails, etc.
+
+        Use the pattern attribute with the regular expression as value.
+
+    What pseudo CSS selectors are available for styling valid and invalid inputs?
+
+        :valid and :invalid pseudo-classes.

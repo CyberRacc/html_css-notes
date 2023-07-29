@@ -81,4 +81,153 @@
 
     # Min validation #
 
-    
+    Use the min attribute with an integer value:
+
+        <form action="#" method="get">
+            <div>
+                <label for="quantity">Quantity</label>
+            </div>
+            <input type="number" id="quantity" name="quantity" min="1" value="0">
+            
+            <div>
+                <button type="submit">Place Order</button>
+            </div>
+        </form>
+
+    # Max validation #
+
+        Use the max attribute with an integer value:
+
+            <form action="#" method="get">
+                <div>
+                    <label for="passengers">Passengers</label>
+                </div>
+                <input type="number" id="passengers" name="passengers" max="5" value="0">
+                
+                <div>
+                    <button type="submit">Book</button>
+                </div>
+            </form>
+
+## Pattern Validations ##
+
+    To ensure we get the correct information from users, we will often want to ensure
+    data matches a particular pattern. Real-world applications would be checking if a
+    credit card number or a postcode is in the correct format.
+
+    To add a pattern validation, we give the form control a pattern attribute with
+    a regular expression as the value. In our example we are using the pattern validation
+    to ensure a US zip code is the correct format (5 numbers followed by an optional dash
+    and 4 more numbers):
+
+        <form action="#" method="get">
+            <div>
+                <label for="zip_code">Postal / Zip Code:</label>
+            </div>
+
+            <input type="text" id="zip_code" name="zip_code" pattern="(\d{5}([\-]\d{4})?)" required>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    Entering an incorrect zip code and submitting the form will display the following
+    validation error in the browser: "Please match the requested format".
+    This isn't very useful since it doesn't communicate how to fix the issue.
+
+    It is good practice to use a placeholder attribute to show users an example of
+    the expected pattern they need to enter:
+
+        <form action="#" method="get">
+            <div>
+                <label for="zip_code">Postal / Zip Code:</label>
+            </div>
+
+            <input type="text" id="zip_code" name="zip_code" pattern="(\d{5}([\-]\d{4})?)" title="Please enter a valid zip code, example: 65251" placeholder="65251" required>
+            
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    The pattern attribute can only be used on <input> elements. Some input elements already
+    validate data that matches a certain pattern. For example, the email input field will
+    make sure a valid email is entered and the url input element will check to ensure the URL
+    starts with http or https:
+
+        <form action="#" method="get">
+            <div>
+                <label for="email">Email:</label>
+            </div>
+            <input type="email" id="email" name="email">
+
+            <div>
+                <label for="website">Website:</label>
+            </div>
+            <input type="url" id="website" name="website">
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+## Styling validations ##
+
+    We can target form controls that have passed or failed validations using the :valid
+    and :invalid pseudo-classes.
+
+    Example:
+
+    HTML:
+
+        <form action="#" method="get">
+            <div>
+                <label for="email">Email</label>
+            </div>
+            <input type="email" id="email" name="email">
+
+            <div>
+                <label for="website">Website</label>
+            </div>
+            <input type="url" id="website" name="website">
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    CSS:
+
+        input {
+            border: 2px solid #000;
+            margin-bottom: 15px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        input:valid {
+            border-color: green;
+        }
+
+    First, we target any valid inputs and give them a green border. Our email and URL inputs
+    initially have a green border since they are not required fields and are valid.
+
+    When a field is invalid, we give it a red border instead.
+
+## Conclusion ##
+
+    Sometimes you need to have a validation that aren't possible with the built-in validations.
+    For example, validating that a password input and password confirmation input have the same
+    value or validating that a username has not already been taken.
+
+    For these cases we will need to get creative and make custom validations using JavaScript
+    and CSS.
+
+    Client-side validations are not enough for ensuring users enter the correct data.
+    We also want to chec the integrity of any user data coming into the backend, and have
+    server-side validations in place.
