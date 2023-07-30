@@ -479,4 +479,4 @@
     Some aspects of other elements are impossible to style, like calendar or date pickers. 
     If we want to style these, we will have to build custom form controls with JavaScript
     or use one of the many JavaScript libraries that provide us with ready-made solutions.
-
+    
