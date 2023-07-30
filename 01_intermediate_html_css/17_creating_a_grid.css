@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template: 50px 50px / 50px 50px; /* shorthand for grid-template columns and grid-template-rows */
+    grid-auto-rows: 50px;
+    grid-auto-columns: 50px; /* Grid implicitly defined new grid trakcs, we can set implicit sizes with these */
+    /* grid-auto-columns needs the grid-auto-flow: column property, used to add extra content horizontally. */
+    gap: 100px 10px; /* shorthand for the below */
+    /* row-gap:  100px; */
+    /* column-gap: 10px; */
+
+}
+
+.container > div {
+    border: 1px solid black;
+}

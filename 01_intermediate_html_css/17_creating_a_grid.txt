@@ -1,0 +1,39 @@
+
+### Creating a Grid ###
+
+## Setting up a grid ##
+
+    # Grid container #
+
+        Think of a CSS Grid as a container with items.
+        When you make an element a grid container, it will "contain" the whole grid.
+
+        An element is turned into a grid container with display: grid;
+        or display: inline-grid;
+
+        .container {
+            display: grid;
+        }
+
+        The parent element marked class="container" becomes a grid container and each of the
+        direct child elements become grid items automatically.
+
+        With CSS Grid, you don't have to assign each child element a property.
+
+        Only DIRECT child elements will become grid items here. If we had another
+        element as a child element under one of these child elements, it would not be a grid item.
+
+            <div class="container">
+                <div>Item 1</div>
+                <div>Item 2
+                    <p>I am not a grid item!</p>
+                </div>
+                <div>Item 3</div>
+                <div>Item 4</div>
+            </div>
+
+        Grid items can also be grid containers. So you could make grids inside grids.
+
+    # Lines and tracks in grids #
+
+        

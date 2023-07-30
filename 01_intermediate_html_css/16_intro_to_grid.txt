@@ -1,25 +1,25 @@
 
 ### Introduction to Grid ###
 
-## A look back at flex ##
+    ## A look back at flex ##
 
-    Whilst Flexbox allows you to build a layout of rows an columns together, it isn't
-    always easy.
+        Whilst Flexbox allows you to build a layout of rows an columns together, it isn't
+        always easy.
 
-    Setting up a two dimensional layout of cards is much easier in CSS Grid:
+        Setting up a two dimensional layout of cards is much easier in CSS Grid:
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: 75px 75px 75px;
-            grid-template-rows: 75px 75px;
-            gap: 32px;
-        }
+            .grid-container {
+                display: grid;
+                grid-template-columns: 75px 75px 75px;
+                grid-template-rows: 75px 75px;
+                gap: 32px;
+            }
 
-        .card {
-            background-color: peachpuff;
-            border: 1px solid black;
-        }
+            .card {
+                background-color: peachpuff;
+                border: 1px solid black;
+            }
 
-## What is grid? ##
+    You should use flex and grid together, not one or the other,
+    Flex for some things, grid for others.
 
-    
