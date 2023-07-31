@@ -51,4 +51,219 @@
     Developer tools also show negative lines opposite from the positive lines When
     looking at line numbers in web dev tools.
 
+## Cells ##
+
+    The space in a grid shared by a single row tracks and single colum track is called a grid cell.
+
+    Grid cell is like the cell in a spreadsheet, a space defined by a row, column coordinate.
+
+    By default, each child element of a grid contaier will occupy one cell.
+
+    In the above example we have 9 cells in the grid, (3 rows x 3 columns), each with one automatically
+    positioned child element inside. The element marked A is occupying a cell that lies in row track 1
+    (between row grid lines 1 and 2) and column track 1 (between column grid lines 1 and 2). The item marked
+    with H is in a cell at row track 3 (between row grid lines 3 and 4) and column track 2 (between column lines
+    2 and 3).
+
+## Positioning ##
+
+    Look at this example:
+
+        .container {
+            display: inline-grid;
+            grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+            background-color: lightblue; 
+        }
+
+            .room {
+            border: 1px solid;
+            font-size: 50%;
+            text-align: center;
+        }
+
+        #living-room {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            /*   grid-row-start: 1;
+            grid-row-end: 3; */
+        }
+
+    We position the living room by usiing grid-column-start and grid-column-end.
+
+    Their property values represent the volumn grid lines we wish it to start and end with.
+
+    grid-row-start and grid-row end do the same thing but for rows.
+
+    These properties allow us to use our existing grid lines to tell items how many rows and columns
+    each item should span across.
+
+        Example of full CSS apartment:
+
+            .container {
+                display: inline-grid;
+                grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+                background-color: lightblue; 
+            }
+
+            .room {
+                border: 1px solid;
+                font-size: 50%;
+                text-align: center;
+            }
+
+            #living-room {
+                grid-column-start: 1;
+                grid-column-end: 6;
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
+
+            #kitchen {
+                grid-column: 4 / 6;
+                grid-row: 3 / 6;
+            }
+
+            #bedroom {
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 3;
+                grid-row-end: 5;
+            }
+
+            #bathroom {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 3;
+                grid-row-end: 6;
+            }
+
+            #closet {
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 5;
+                grid-row-end: 6;
+            }
+
+    In the kitchen we have used shorthand properties. Grid-column is just a combination
+    of grid-column-start and grid-column-end with a slash between the two values.
+
+    Grid-row is the shorthanf version of setting an item's row postitioning.
+
+## grid-area ##
+
+    There are other ways to position items.
+
+    There's an even shorter shorthand for positioning grid items with start and end lines.
+
+    You can combine grid-row-start / grid-column-start / grid-row-end / grid-column-end into one
+    line using grid-area.
+
+    The living room example above could be written like:
+
+        #living-room {
+            grid-area: 1 / 1 / 3 / 6;
+        }
+
+    But grid-area can also refer to a few different things.
+
+    Instead of using the grid lines to position all the items in a grid, we can create a visual
+    layout of the grid in words.
+
+    To do this we give each item on the grid a name using grid-area.
+
+    So our living room becomes:
+
+        #living-room {
+            grid-area: living-room;
+        }
+
+    We could do this to all of our grid items and give each room a grid-area value as a name.
+    Then map out the whole structure with the grid container using grid-template-areas.
+
+        .container {
+            display: inline-grid;
+            grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+            background-color: lightblue; 
+            grid-template-areas:
+                "living-room living-room living-room living-room living-room"
+                "living-room living-room living-room living-room living-room"
+                "bedroom bedroom bathroom kitchen kitchen"
+                "bedroom bedroom bathroom kitchen kitchen"
+                "closet closet bathroom kitchen kitchen"    
+        }
+
+        .room {
+            border: 1px solid;
+            font-size: 50%;
+            text-align: center;
+        }
+
+        #living-room {
+            grid-area:  living-room;
+        }
+
+        #kitchen {
+            grid-area: kitchen;
+        }
+
+        #bedroom {
+            grid-area: bedroom;
+        }
+
+        #bathroom {
+            grid-area: bathroom;
+        }
+
+        #closet {
+            grid-area: closet;
+        }
+
+    We can also use . to indicate empty cells. Say our apartment might be getting a new room, we can
+    remove room in the bathroom and kitchen:
+
+        .container {
+            display: inline-grid;
+            grid-template: 40px 40px 40px 40px 40px / 40px 40px 40px 40px 40px;
+            background-color: lightblue; 
+            grid-template-areas:
+                "living-room living-room living-room living-room living-room"
+                "living-room living-room living-room living-room living-room"
+                "bedroom bedroom bathroom kitchen kitchen"
+                "bedroom bedroom bathroom kitchen kitchen"
+                "closet closet . . ."    
+        }
+
+        .room {
+            border: 1px solid;
+            font-size: 50%;
+            text-align: center;
+        }
+
+        #living-room {
+            grid-area:  living-room;
+        }
+
+        #kitchen {
+            grid-area: kitchen;
+        }
+
+        #bedroom {
+            grid-area: bedroom;
+        }
+
+        #bathroom {
+            grid-area: bathroom;
+        }
+
+        #closet {
+            grid-area: closet;
+        }
+
+    These are two very different ways of using grid-area on a grid item.
+
+    The term "grid area" means all of the grid cells of the living room for example.
+
+    A grid item can take up multiple cells forming an area of the grid much like a
+    room with four walls in an apartment.
+
 
