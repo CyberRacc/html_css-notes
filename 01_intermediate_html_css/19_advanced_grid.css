@@ -1,14 +1,171 @@
 .grid-container {
-    resize: both;
-    overflow: auto;
+    resize: both; /* Allows the user to resize the container by clicking and dragging from the bottom right corner. */
+    overflow: auto; /* Enables scrolling if container is resized smaller than grid can accommodate. */
     display: grid;
-    gap: 4px;
-    padding: 4px;
+    gap: 4px;  /* Gap and padding together here make a "gutter" area */
+    padding: 4px; 
     border: 1px solid grey;
     background-color: skyblue;
-    grid-template-rows: 150px 150px;
-    grid-template-columns: 150px 150px 150px 150px 150px;
+    /* grid-template-rows: 150px 150px; */
+    /* grid-template-columns: 150px 150px 150px 150px 150px; */
+    grid-template-rows: repeat(2, min(200px, 50%)); /* The browser will compare both these min values and apply whichever is smallest.
+    essentially saying to grid that the track size should be 50% of the grid's total vertical space (because we are defining row size),
+    unless that number would exceed 200px. Esentially setting a max height for the track. */
+    grid-template-columns: repeat(2, 2fr) repeat(3, max(120px, 15%)); /* The grid column
+    size will be calculated based on the larger of the two values 120px and 15%
+    of the grid container's width. We are essentially setting a minimum width of our
+    grid column size at 120px. */
   }
+
+  /* minmax() is a CSS function that is specifically used with Grid. It can only
+  be used with the following CSS properties:
+  
+  
+    grid-template-columns
+    grid-template-rows
+    grid-auto-columns
+    grid-auto-rows
+
+
+    it takes only two arguments:
+
+    1. the minimum size the grid track can be
+
+    2. the maximum size the grid track can be.
+
+    Unlike min() and max(), it CAN make sense to use static values for both arguments.
+
+    Look at the example:
+
+      .grid-container {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(5, minmax(150px, 200px));
+      }
+
+    With our grid-template-columns set with minmax() values, each grid item's width
+    will grow and shrink with the container as it resizes horizontally. However, as
+    the grid shrinks, the column tracks will stop shrinking at 150px, and as the grid grows,
+    they will stop growing at 200px.
+
+    */
+
+  /* The repeat() function in CSS is available to the CSS grid template properties
+  that allow us to define a number of rows or columns and the size we want them
+  to be without having to manually type out each individual track's size, the repeat
+  functions above are exatly the same as the commented out lines. */
+
+  /* Fraction units (fr), which is a way of distributing whatever remaining space is
+  left in the grid.
+  
+  If we have a four-column grid with a total width of 400px and four grid items each
+  on a column track assigned 1fr as their size, all of the grid items should be given
+  one fraction of that 400px of space, which is 100 pixels.
+  
+  You can mix static units like px with dynamic units like fr. 
+  
+  Unlike minmax(), clamp() is a CSS function that can be used anywhere, not just within
+  a grid container.
+
+  The syntax:
+
+      clamp(minimum-size, ideal-size, maximum-size)
+
+  What this does is allow our item to resize itself until it reaches one of the minimum
+  or maximum threshold values.
+
+  Since clamp()'s purpose is to create a flexibly sized track with constraints, we want
+  to use a dynamic value for the "ideal size" argument, and typically a static size for
+  the minimum and maximum size, although it is possible to use a dynamic value here too.
+
+  Simple non-grid example:
+
+    .simple-example {
+    width: clamp(500px, 80%, 1000px);
+    }
+
+  This element, which we can pretend is a div, will render with a width equal to 80%
+  of its parent's width, unless that number is lower than 500px or higher than 1000px,
+  in which case it will use those numbers as its width.
+
+  In grid:
+
+    .grid-container {
+      grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+    }
+
+  Clamp() and minmax() are fantastic methods for making grids more responsive whilst
+  ensuring we don't hit critical breakpoints that make our website look bad.
+
+  auto-fix and auto-fill
+
+    These two values are acually a part of the repeat() function specification, but they
+    were saved for the end of the lesson because their usefulness is not apparent until
+    after you understand the minmax() function.
+
+    Here's the use-case: You want to give your grid a number of columns that is flexible
+    based on the size of the grid. For example, if our grid is only 200px wide, we 
+    may only want one column. If it's 400px wide, we may want two, and so on.
+
+    Solving this problem with media queries would be a lot of typing. Thankfully auto-fit
+    and auto-full are here.
+
+    Both of these functions will return "the largest possible positive integer" without
+    the grid items overflowing their container. Here is a simple example:
+
+    .simple-example {
+      display: grid;
+      width: 1000px;
+      grid-template-columns: repeat(auto-fit, 200px);
+    }
+
+    For this grid, we have a set width of 1000px and we are telling it to fill in our
+    columns with tracks of 200px each. As long as there are at least five grid items,
+    this will result in a 5-column layout no matter what. In this case, auto-fill
+    would do the same thing. We'll go into the difference soon.
+
+    The real magic of auto-fit and auto-fill comes when we incorporate minmax().
+    With minmax(), we can tell our grid that we want to have as manny columns as possible,
+    using the constraints of our minmax() function to determine each column's size, without
+    it overflowing our grid. Check out how cool our grid looks when we resize it now:
+
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    Now when we resize, the columns automatically know how many will fit accross without
+    any media queries whatsoever.
+
+    What is going on here specifically with repeat(auto-fit, minmax(150px, 1fr));?
+
+    Remember that auto-fit will return the HIGHEST POSSIBLE INTEGER without overflowing
+    the grid. So first, the browser has to know how wide our grid is: in this case,
+    it is just the window's width (minus margins) because we didn't explicitly set it.
+    For the sake of this example, let's pretend our window is currently 500px wide.
+    Second, the browser needs to know how many grid column tracks could
+    possibly fit in that width. To do this, it uses the minimum value in our minmax()
+    function, since that will yield the highest number of items, which is 150px.
+    If our window is 500px wide, this means our grid will render 3 columns.
+
+    Once the browser has determined how many columns we can fit, it then resizes our
+    columns up to the maximum value allowed by our minmax() function. In this case,
+    our max size is 1fr, so all three columns will be given an equal allotment of the
+    space available. As we resize our window these calculations happen in realtime.
+
+  What about auto-fill?
+
+    In most cases, auto-fill is going to work exactly the same way as auto-fit.
+    The difference is only noticeable when there are fewer items that can fill up the
+    entirety of the grid row once. When the grid is expanded to a size where another
+    grid item could fit, but there aren't any left, auto-fit will keep the grid items
+    at there max size.
+
+    Using auto-fill, the grid items will snap back down to their min size once the
+    space becomes available to add another grid item, even if there isn't one to be
+    rendered. They will continue their pattern of growing to max and snapping back
+    to their min as the grid expands and more room becomes available for new grid
+    tracks.
+
+  */
   
   .grid-item {
     background-color: #444;
